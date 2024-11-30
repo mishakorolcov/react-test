@@ -3,8 +3,6 @@ import localBanners from '../../data/banner.json';
 import axios from "axios";
 
 
-
-
 const Banner = () => {
     const [banners, setBanners] = useState([]);
     const fetchBanners = async () => {
@@ -21,8 +19,6 @@ const Banner = () => {
     };
     // Fetch banners from backend on component mount or fallback to local data
     useEffect(() => {
-
-
         fetchBanners();
     }, []);
 
