@@ -7,12 +7,13 @@ const Banner = () => {
     const [banners, setBanners] = useState([]);
     const fetchBanners = async () => {
         try {
-            const response = await axios.get('https://sweet-home-api.onrender.com/api/banner'); // Adjust URL to your endpoint
+            //https://sweet-home-api.onrender.com
+            const response = await axios.get('/api/banner', { timeout: 1000 }); // Adjust URL to your endpoint
             if (response && response.data) {
                 setBanners(response.data); // Use server data if available
             }
         } catch (error) {
-            console.error('Error fetching banners; using local data:', error.response.data);
+            console.error('Error fetching banners; using local data:', error);
             // setBanners(localBanners); // Use local JSON as fallback
         }
     };
