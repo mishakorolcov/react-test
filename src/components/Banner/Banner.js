@@ -10,7 +10,7 @@ const Banner = () => {
     useEffect(() => {
         const fetchBanners = async () => {
             try {
-                const response = await axios.get('/api/banner'); // Adjust URL to your endpoint
+                const response = await axios.get('/api/banner', { timeout: 1000 }); // Adjust URL to your endpoint
                 if (response && response.data) {
                     setBanners(response.data); // Use server data if available
                 }
